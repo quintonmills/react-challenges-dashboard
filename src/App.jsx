@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import UseBooleanDemo from './solutions/UseBooleanDemo';
+import ComponentCounter from './solutions/componentCounter';
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState('DASHBOARD');
@@ -8,6 +9,8 @@ export default function App() {
     switch (activeScreen) {
       case 'Q01_useBoolean':
         return <UseBooleanDemo />;
+      case 'Q02_componentCounter':
+        return <ComponentCounter/>;
       default:
         return renderDashboardMenu();
     }
@@ -22,6 +25,10 @@ export default function App() {
         {/* Q1 Button */}
         <button style={styles.menuButton} onClick={() => setActiveScreen('Q01_useBoolean')}>
           Q1: useBoolean Custom Hook
+        </button>
+
+        <button style={styles.menuButton} onClick={() => setActiveScreen('Q02_componentCounter')}>
+          Q2: Component Counter
         </button>
 
         {/* Coming Soon Placeholder */}
